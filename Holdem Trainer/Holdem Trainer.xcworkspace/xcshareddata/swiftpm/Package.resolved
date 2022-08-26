@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "example-package-deckofplayingcards",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/example-package-deckofplayingcards",
+      "state" : {
+        "revision" : "2c0e5ac3e10216151fc78ac1ec6bd9c2c0111a3a",
+        "version" : "3.0.4"
+      }
+    },
+    {
+      "identity" : "example-package-fisheryates",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/example-package-fisheryates.git",
+      "state" : {
+        "revision" : "e729f197bbc3831b9a3005fa71ad6f38c1e7e17e",
+        "version" : "2.0.6"
+      }
+    },
+    {
+      "identity" : "example-package-playingcard",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/example-package-playingcard.git",
+      "state" : {
+        "revision" : "39ddabb01e8102ab548a8c6bb3eb20b15f3b4fbc",
+        "version" : "3.0.5"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "revision" : "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
+        "version" : "1.4.2"
+      }
+    }
+  ],
+  "version" : 2
+}
