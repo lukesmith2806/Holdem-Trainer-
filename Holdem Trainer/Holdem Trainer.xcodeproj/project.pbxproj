@@ -14,7 +14,6 @@
 		A31E84C128B86B8E008C7774 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E84C028B86B8E008C7774 /* Logger.swift */; };
 		A331B13928014EA600E6EC40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331B13828014EA600E6EC40 /* AppDelegate.swift */; };
 		A331B14528014EAA00E6EC40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A331B14428014EAA00E6EC40 /* Assets.xcassets */; };
-		A357FB59281F48AD00AC523E /* PotOddsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357FB58281F48AD00AC523E /* PotOddsView.swift */; };
 		A357FB622831AFB500AC523E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357FB612831AFB500AC523E /* DataManager.swift */; };
 		A38445032818CBBE004324F4 /* ChenGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38445022818CBBE004324F4 /* ChenGameViewController.swift */; };
 		A38445092818CC61004324F4 /* HoldemTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38445082818CC61004324F4 /* HoldemTabBarController.swift */; };
@@ -40,7 +39,6 @@
 		A331B13828014EA600E6EC40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A331B14428014EAA00E6EC40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A331B14928014EAA00E6EC40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A357FB58281F48AD00AC523E /* PotOddsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotOddsView.swift; sourceTree = "<group>"; };
 		A357FB612831AFB500AC523E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A38445022818CBBE004324F4 /* ChenGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChenGameViewController.swift; sourceTree = "<group>"; };
 		A38445082818CC61004324F4 /* HoldemTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldemTabBarController.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 				A3F4C8EC280151B4000D8A6F /* ChenGameButton.swift */,
 				A31DAAC628404FDF003EFCFC /* StatisticsView.swift */,
 				A3F4C8ED280151B4000D8A6F /* ChenGameView.swift */,
-				A357FB58281F48AD00AC523E /* PotOddsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,7 +303,6 @@
 				A3B51789283AC6CC0015553B /* Storable.swift in Sources */,
 				A31DAAC528404FD4003EFCFC /* StatisticsViewController.swift in Sources */,
 				A357FB622831AFB500AC523E /* DataManager.swift in Sources */,
-				A357FB59281F48AD00AC523E /* PotOddsView.swift in Sources */,
 				A38445092818CC61004324F4 /* HoldemTabBarController.swift in Sources */,
 				A3F4C8EA280151A8000D8A6F /* ChenHand.swift in Sources */,
 				A3F4C8EF280151B4000D8A6F /* ChenGameView.swift in Sources */,
