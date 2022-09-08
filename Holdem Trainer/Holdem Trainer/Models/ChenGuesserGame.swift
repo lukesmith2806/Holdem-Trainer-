@@ -15,11 +15,21 @@ class ChenGuesserGame {
     func runGame(numberOfHands: Int) -> [ChenHand] {
         // returns array of ChenHands with numberOfHands elements
         var handArray: [ChenHand] = []
-        for _ in 0..<numberOfHands {
-            var deck = Deck.standard52CardDeck()
-            deck.shuffle()
-            handArray.append(ChenHand(handArray: [deck.deal()!, deck.deal()!]))
+        // Creates 3 chen hands
+        var deck = Deck.standard52CardDeck()
+        deck.shuffle()
+        
+        while handArray.count < numberOfHands {
+            
+            if let cardOne = deck.deal(), let cardTwo = deck.deal() {
+                
+                let hand = ChenHand(handArray: [cardOne, cardTwo])
+                if !handArray.contains {$0 == hand} {
+                    handArray.append(hand)
+                }
+            }
         }
+        
         Logger.info.info("Hands Generated: \(handArray)")
         return handArray
     }
@@ -32,9 +42,9 @@ class ChenGuesserGame {
                 Logger.info.info("Highest Hand: \(hand)")
                 return false
             }
-                
+            
         }
         Logger.info.info("Highest Hand: \(chosenHand)")
         return true
-}
+    }
 }

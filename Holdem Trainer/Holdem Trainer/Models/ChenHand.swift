@@ -151,10 +151,11 @@ struct ChenHand {
 extension ChenHand: CustomStringConvertible {
     public var description: String {
         var ret = ""
-        ret = ret + handArray[0].rank.description + handArray[1].rank.description
-        if (handArray[0].suit == handArray[1].suit) {
+        let sortedHand = handArray.sorted()
+        ret = ret + sortedHand[0].rank.description + sortedHand[1].rank.description
+        if (sortedHand[0].suit == sortedHand[1].suit) {
             ret = ret + "s"
-        } else if (handArray[0].rank == handArray[1].rank){
+        } else if (sortedHand[0].rank == sortedHand[1].rank){
             return ret
         } else {
             ret = ret + "o"
@@ -164,3 +165,14 @@ extension ChenHand: CustomStringConvertible {
     }
 }
 
+extension ChenHand: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        
+        return lhs.description == rhs.description
+    }
+    
+    
+}
+
+
+// 

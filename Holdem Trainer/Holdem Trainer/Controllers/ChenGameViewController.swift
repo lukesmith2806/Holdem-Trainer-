@@ -55,7 +55,9 @@ class ChenGameViewController: UIViewController {
             gameRun()
         }
             // updates DB
-           DataManager.shared.update(gameScore: gameScoreStored!)
+        if let gameScoreStored = gameScoreStored {
+            DataManager.shared.update(gameScore: gameScoreStored)
+        }
        
             print("Could not update Game data")
         
