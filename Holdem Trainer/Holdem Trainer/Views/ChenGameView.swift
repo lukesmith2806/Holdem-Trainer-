@@ -19,7 +19,7 @@ class ChenGameView: UIView {
     var buttonTwo = ChenGameButton()
     var buttonThree = ChenGameButton()
     var buttonArray = [ChenGameButton]()
-    var cardViews = [CardView]()
+
     
     
     
@@ -58,10 +58,9 @@ class ChenGameView: UIView {
             horizontalStack.spacing = 16
             button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.setupButton()
-            let cardView = CardView()
-            cardViews.append(cardView)
-           // horizontalStack.addArrangedSubview(button)
-            buttonStack.addArrangedSubview(cardView)
+            horizontalStack.addArrangedSubview(button)
+            buttonStack.addArrangedSubview(horizontalStack)
+        
         }
         
         
@@ -92,14 +91,14 @@ class ChenGameView: UIView {
         Logger.info.info("Hands in Array \(handArray)")
         for i in 0..<buttonArray.count {
             buttonArray[i].setTitle(hands[i], for: .normal)
-            cardViews[i].updateCard(hands[i])
+            
         }
     }
     func updateSubviews(_ hands: [String], score: Int) {
         handArray.removeAll()
         for i in 0..<buttonArray.count {
             buttonArray[i].setTitle(hands[i], for: .normal)
-            cardViews[i].updateCard(hands[i])
+    
         }
         scorelabel.text = String(score)
         

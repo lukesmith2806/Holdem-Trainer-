@@ -48,3 +48,9 @@ class CardView: UIView {
         drawCardBorder()
     }
 }
+
+// HandView Overview:
+// Holds 2 CardViews
+// stylistically displays cardviews
+// displays text represantative of the two cards in cardViews
+// Refactor ChenGameView to hold hands, not strings for hands 
