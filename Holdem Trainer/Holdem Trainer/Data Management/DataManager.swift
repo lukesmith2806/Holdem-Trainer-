@@ -16,6 +16,14 @@ protocol GameScoreManagable {
     func delete(gameScore: GameScore) -> Bool
 }
 
+protocol GameAttemptManagable {
+    func getAll() -> [GameAttempt]
+    func find(with name: String) -> GameAttempt? // return the first character attribute it can find or nothing at all
+    func add(gameAttempt: GameAttempt)
+    func update(gameAttempt: GameAttempt)
+    func delete(gameAttempt: GameAttempt) -> Bool
+}
+
 class DataManager {
     // You can read/write/delete/find data using `DataManager.shared` and then the method you want to call.
     static let shared = DataManager()

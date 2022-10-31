@@ -15,6 +15,7 @@
 		A3020BCC2910605300869132 /* TimedChenGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3020BCB2910605300869132 /* TimedChenGameView.swift */; };
 		A3020BCE2910606300869132 /* TimedChenGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3020BCD2910606300869132 /* TimedChenGameViewController.swift */; };
 		A3020BD2291064EF00869132 /* TimedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3020BD1291064EF00869132 /* TimedGame.swift */; };
+		A3020BD429108F9400869132 /* GameAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3020BD329108F9400869132 /* GameAttempt.swift */; };
 		A31DAAC528404FD4003EFCFC /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31DAAC428404FD4003EFCFC /* StatisticsViewController.swift */; };
 		A31DAAC728404FDF003EFCFC /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31DAAC628404FDF003EFCFC /* StatisticsView.swift */; };
 		A31DAACC2841A938003EFCFC /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A31DAACB2841A938003EFCFC /* Logging */; };
@@ -57,6 +58,7 @@
 		A3020BCB2910605300869132 /* TimedChenGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedChenGameView.swift; sourceTree = "<group>"; };
 		A3020BCD2910606300869132 /* TimedChenGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedChenGameViewController.swift; sourceTree = "<group>"; };
 		A3020BD1291064EF00869132 /* TimedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedGame.swift; sourceTree = "<group>"; };
+		A3020BD329108F9400869132 /* GameAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAttempt.swift; sourceTree = "<group>"; };
 		A306D944283ACBC30013AAB1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "/Users/luke/HoldemTrainer/Holdem Trainer/Holdem Trainer/Launch Screen.storyboard"; sourceTree = "<absolute>"; };
 		A31DAAC428404FD4003EFCFC /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		A31DAAC628404FDF003EFCFC /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				A3F4C8E7280151A8000D8A6F /* ChenGuesserGame.swift */,
 				A3B51786283AC2F50015553B /* GameScore.swift */,
+				A3020BD329108F9400869132 /* GameAttempt.swift */,
 				A3F4C8E8280151A8000D8A6F /* ChenHand.swift */,
 			);
 			path = Models;
@@ -415,6 +418,7 @@
 				A31DAAC728404FDF003EFCFC /* StatisticsView.swift in Sources */,
 				A31E84C128B86B8E008C7774 /* Logger.swift in Sources */,
 				A3F4C8E9280151A8000D8A6F /* ChenGuesserGame.swift in Sources */,
+				A3020BD429108F9400869132 /* GameAttempt.swift in Sources */,
 				A38445032818CBBE004324F4 /* ChenGameViewController.swift in Sources */,
 				A31DAACE2841D5E3003EFCFC /* Errors.swift in Sources */,
 				A331B13928014EA600E6EC40 /* AppDelegate.swift in Sources */,
