@@ -36,7 +36,7 @@ class ChenGuesserGame {
             if let cardOne = deck.deal(), let cardTwo = deck.deal() {
                 
                 let hand = ChenHand(handArray: [cardOne, cardTwo])
-                if !handArray.contains {$0 == hand} {
+                if !handArray.contains(where: {$0 == hand}) {
                     print(hand.handValue())
                     handArray.append(hand)
                 }

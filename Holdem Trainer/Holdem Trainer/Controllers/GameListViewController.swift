@@ -11,7 +11,8 @@ import SnapKit
 class GameListViewController: UIViewController {
     var tableView = UITableView()
     var games: [String] = []
-    var gameDict: [String: UIViewController] = ["Chen Game": ChenGameViewController()]
+    var gameDict: [String: UIViewController] = ["Untimed Chen Game": ChenGameViewController(), "Timed Chen Game": TimedChenGameViewController()]
+    var sections: [String: Int] = ["Timed": 1, "Untimed": 2]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +33,13 @@ class GameListViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
+        
         tableView.register(GameListTableViewCell.self, forCellReuseIdentifier: "GameCell")
 
 
 }
     func fetchData() -> [String] {
-        return["Chen Game"]
+        return["Untimed Chen Game", "Timed Chen Game"]
     }
     
 }
@@ -52,6 +54,7 @@ extension GameListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return games.count
     }
@@ -60,9 +63,10 @@ extension GameListViewController: UITableViewDelegate, UITableViewDataSource {
         if let gameVC = gameDict[games[indexPath.row]] {
             navigationController?.pushViewController(gameVC, animated: true)
         }
-        
-
     }
+    
+
+    
    
 }
 

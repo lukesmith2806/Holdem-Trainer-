@@ -1,17 +1,21 @@
 //
-//  ViewController.swift
-//  PokerBuddy
+//  TimedChenGameViewController.swift
+//  Holdem Trainer
 //
-//  Created by Luke Smith  on 4/4/22.
+//  Created by Luke Smith  on 10/31/22.
 //
+
 import UIKit
-import Logging
-class ChenGameViewController: UIViewController {
-    var highScore = 0
-    var gameScoreStored = DataManager.shared.find(with: "ChenGame")
+
+class TimedChenGameViewController: UIViewController {
+    let gameTime = 10
     let chenGame = ChenGuesserGame()
+    let gameView  = TimedChenGameView()
+    var runTime = 10
     var gameDict: [ChenGameButton:ChenHand] = [:]
-    let gameView = ChenGameView()
+    var highScore = 0
+    var timer: Timer!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +23,14 @@ class ChenGameViewController: UIViewController {
         for btn in gameView.buttonArray {
             btn.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         }
-            
-        
         gameRun()
+        startTimer()
     }
-    func gameRun()  {
+    override func viewWillDisappear(_ animated: Bool) {
+        print("gone")
+    }
+    
+    func gameRun() {
         gameDict.removeAll()
         let tempButtonArray = chenGame.runGame(numberOfHands: 3)
         for i in 0..<tempButtonArray.count {
@@ -36,38 +43,57 @@ class ChenGameViewController: UIViewController {
             tempStringArray.append(val.description)
         }
         gameView.updateSubviews(tempStringArray, score: highScore)
-    
     }
     
-   
+    func startGame() {
+        runTime = 10
+        startTimer()
+        
+    }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(decrementCountLabel), userInfo: nil, repeats: true)
+    }
+    
+    func stopGame() {
+        
+    }
+    
+    func submitScore() {
+        
+    }
+    
+    func newAttempt() {
+        
+    }
+    
+    func submitAttempt() {
+        
+    }
+    
+    @objc func decrementCountLabel() {
+        runTime -= 1
+        gameView.updateTimeLabel(input: String(runTime))
+        if (runTime <= 0) {
+            timer.invalidate()
+        }
+    }
+    
     @objc func buttonTapped(sender: ChenGameButton) {
         guard let buttonText = sender.titleLabel?.text, let hand = gameDict[sender] else {
             print("Button text is nil")
             return
         }
-        // updating highScore
-        gameScoreStored?.attempts += 1
         if (chenGame.checkValue(handArray: Array(gameDict.values), chosenHand: hand) == true) {
             highScore += 1
-            gameScoreStored?.correct += 1
             gameRun()
         } else {
             highScore = 0
             gameRun()
         }
-            // updates DB
-        if let gameScoreStored = gameScoreStored {
-            DataManager.shared.update(gameScore: gameScoreStored)
-            print("Could Update Gama Data")
-        } else {
-            print("Could not update Game Data")
-        }
-       
-            
         
         sender.hapticExtraHeavy()
         sender.shake()
+        
     }
-    
-    
 }
