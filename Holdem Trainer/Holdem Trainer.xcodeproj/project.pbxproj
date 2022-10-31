@@ -150,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				A331B13828014EA600E6EC40 /* AppDelegate.swift */,
+				A3020BC9291057BC00869132 /* Constants.swift */,
 				A357FB602831967900AC523E /* Data Management */,
 				A3F4C8E6280151A8000D8A6F /* Models */,
 				A3F4C8EB280151B4000D8A6F /* Views */,
@@ -157,7 +158,6 @@
 				A331B14428014EAA00E6EC40 /* Assets.xcassets */,
 				A306D944283ACBC30013AAB1 /* Launch Screen.storyboard */,
 				A331B14928014EAA00E6EC40 /* Info.plist */,
-				A3020BC9291057BC00869132 /* Constants.swift */,
 			);
 			path = "Holdem Trainer";
 			sourceTree = "<group>";

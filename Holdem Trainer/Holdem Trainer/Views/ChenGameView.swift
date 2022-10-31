@@ -27,7 +27,7 @@ class ChenGameView: UIView {
         Logger.viewCycle.info("Chen View initialized")
         super.init(frame: frame)
         createSubviews()
-        self.backgroundColor = UIColor(red: 99/255, green: 149/255, blue: 1, alpha: 1)
+        self.backgroundColor = globalBackgroundColor
     }
     
     required init?(coder aDecoder: NSCoder) {

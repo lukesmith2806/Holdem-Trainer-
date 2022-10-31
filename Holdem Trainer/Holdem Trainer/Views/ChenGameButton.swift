@@ -30,7 +30,7 @@ class ChenGameButton: UIButton {
          setShadow()
          setTitleColor(.black, for: .normal)
          
-         backgroundColor      = UIColor(red: 99/255, green: 1, blue: 250/255, alpha: 1)
+         backgroundColor      = globalButtonColor
          titleLabel?.font     = UIFont(name: "AvenirNext-DemiBold", size: 18)
          layer.cornerRadius   = 25
          layer.borderWidth    = 3.0
