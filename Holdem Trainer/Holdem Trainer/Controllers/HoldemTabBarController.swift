@@ -12,7 +12,7 @@ class HoldemTabBarController: UITabBarController {
     override func viewDidLoad() {
     
             super.viewDidLoad()
-        let nav = genNavCon(vc: ChenGameViewController(), title: "ChenGame", image: UIImage(systemName: "gamecontroller")! )
+        let nav = genNavCon(vc: GameListViewController(), title: "Games", image: UIImage(systemName: "gamecontroller")! )
         let nav2 = genNavCon(vc: StatisticsViewController(), title: "Rules", image: UIImage(systemName: "questionmark.square.dashed")!)
         self.tabBar.backgroundColor =  .black
         

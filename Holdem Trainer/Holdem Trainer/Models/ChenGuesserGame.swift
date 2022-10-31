@@ -37,6 +37,7 @@ class ChenGuesserGame {
                 
                 let hand = ChenHand(handArray: [cardOne, cardTwo])
                 if !handArray.contains {$0 == hand} {
+                    print(hand.handValue())
                     handArray.append(hand)
                 }
             }
@@ -50,6 +51,7 @@ class ChenGuesserGame {
         // given an array of ChenHands, determines if a given hand has the highest value in the array(tie = true)
         Logger.info.info("Hands Compared: \(handArray)")
         for hand in handArray {
+           
             if (hand.handValue() > chosenHand.handValue()) {
                 Logger.info.info("Highest Hand: \(hand)")
                 return false

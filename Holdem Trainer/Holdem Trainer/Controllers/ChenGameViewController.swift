@@ -57,9 +57,12 @@ class ChenGameViewController: UIViewController {
             // updates DB
         if let gameScoreStored = gameScoreStored {
             DataManager.shared.update(gameScore: gameScoreStored)
+            print("Could Update Gama Data")
+        } else {
+            print("Could not update Game Data")
         }
        
-            print("Could not update Game data")
+            
         
         sender.hapticExtraHeavy()
         sender.shake()
