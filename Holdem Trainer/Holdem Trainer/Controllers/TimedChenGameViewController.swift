@@ -29,6 +29,7 @@ class TimedChenGameViewController: UIViewController {
         startTimer()
         stopWatch.start()
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         print("gone")
     }
@@ -36,14 +37,11 @@ class TimedChenGameViewController: UIViewController {
     func gameRun() {
         gameDict.removeAll()
         let tempButtonArray = chenGame.runGame(numberOfHands: 3)
+        var tempStringArray = [String]()
         for i in 0..<tempButtonArray.count {
-            gameDict[gameView.buttonArray[i]] = tempButtonArray[i]
-            
-        }
-        var tempStringArray: [String] = []
-        var tempValueArray = Array(gameDict.values)
-        for val in tempValueArray {
-            tempStringArray.append(val.description)
+            let btn = gameView.buttonArray[i]
+            tempStringArray.append(tempButtonArray[i].description)
+            gameDict[btn] = tempButtonArray[i]
         }
         gameView.updateSubviews(tempStringArray, score: highScore)
         stopWatch.start()
@@ -68,7 +66,7 @@ class TimedChenGameViewController: UIViewController {
     func submitAttempt(time: Int, isCorrect: Bool) {
         let attempt = GameAttempt(name: "Timed Chen Game", correct: isCorrect, time: time)
         DataManager.shared.add(gameAttempt: attempt)
-        print(DataManager.shared.getAllAttempts())
+    
     }
     
     func newAttempt() {
@@ -94,12 +92,12 @@ class TimedChenGameViewController: UIViewController {
         }
         let attemptTime = stopWatch.elapsedTimeMilliseconds()
         stopWatch.stop()
-        
-        
+       
         if (chenGame.checkValue(handArray: Array(gameDict.values), chosenHand: hand) == true) {
             highScore += 1
             submitAttempt(time: attemptTime, isCorrect: true)
             gameRun()
+            
         } else {
             highScore = 0
             submitAttempt(time: attemptTime, isCorrect: false)

@@ -25,14 +25,11 @@ class ChenGameViewController: UIViewController {
     func gameRun()  {
         gameDict.removeAll()
         let tempButtonArray = chenGame.runGame(numberOfHands: 3)
+        var tempStringArray = [String]()
         for i in 0..<tempButtonArray.count {
-            gameDict[gameView.buttonArray[i]] = tempButtonArray[i]
-            
-        }
-        var tempStringArray: [String] = []
-        var tempValueArray = Array(gameDict.values)
-        for val in tempValueArray {
-            tempStringArray.append(val.description)
+            let btn = gameView.buttonArray[i]
+            tempStringArray.append(tempButtonArray[i].description)
+            gameDict[btn] = tempButtonArray[i]
         }
         gameView.updateSubviews(tempStringArray, score: highScore)
     
@@ -45,13 +42,17 @@ class ChenGameViewController: UIViewController {
             return
         }
         // updating highScore
-    
+        
+        print("Button Text: \(buttonText)")
+        print("chosen \(hand) \(hand.handValue())")
+   
         if (chenGame.checkValue(handArray: Array(gameDict.values), chosenHand: hand) == true) {
             highScore += 1
-      
+          
             gameRun()
         } else {
             highScore = 0
+            
             gameRun()
         }
             // updates DB

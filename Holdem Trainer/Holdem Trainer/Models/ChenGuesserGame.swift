@@ -54,11 +54,13 @@ class ChenGuesserGame {
            
             if (hand.handValue() > chosenHand.handValue()) {
                 Logger.info.info("Highest Hand: \(hand)")
+                print(hand.handValue())
                 return false
             }
             
         }
         Logger.info.info("Highest Hand: \(chosenHand)")
+        print(chosenHand.handValue())
         return true
     }
 }

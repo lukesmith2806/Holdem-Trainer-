@@ -57,9 +57,10 @@ struct ChenHand {
         let highest = rawValue(cardOne) >= rawValue(cardTwo) ? cardOne : cardTwo
         var points = chenValue(highest)
         if (cardOne.rank == cardTwo.rank) {
-            points = chenValue(highest) * 2 > 5 ? points * 2 : 5
-            if (cardOne.rank == .five) {
-                points += 1
+            if chenValue(cardOne) * 2 > 5 {
+                return Int(chenValue(cardOne) * 2)
+            } else {
+                return 5
             }
         }
         if (cardOne.suit == cardTwo.suit) {
@@ -90,7 +91,8 @@ struct ChenHand {
         
     }
     private func gap(cardOne: PlayingCard, cardTwo: PlayingCard) -> Float {
-        return abs(rawValue(cardOne) - rawValue(cardTwo) - 1)
+        return (abs(rawValue(cardOne) - rawValue(cardTwo))) - 1
+    
     }
     private func chenValue(_ x: PlayingCard) -> Float {
         switch x.rank {

@@ -99,6 +99,17 @@ extension DataManager: GameAttemptManagable {
     }
 }
 
+extension DataManager {
+    func returnAllTimes() -> [Int] {
+        var timeArray = [Int]()
+        let allRecords = getAllAttempts()
+        for record in allRecords {
+            timeArray.append(record.time)
+        }
+        return timeArray
+    }
+    
+}
 
 // GRDB implementation
 extension DataManager {
