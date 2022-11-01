@@ -17,6 +17,7 @@ class TimedChenGameViewController: UIViewController {
     var gameDict: [ChenGameButton:ChenHand] = [:]
     var highScore = 0
     var timer: Timer!
+    var gameActive = false
     
     
     override func viewDidLoad() {
@@ -26,11 +27,17 @@ class TimedChenGameViewController: UIViewController {
             btn.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         }
         gameRun()
-        startTimer()
+        startGame()
         stopWatch.start()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if gameActive == false {
+            startGame()
+        }
+    }
     override func viewWillDisappear(_ animated: Bool) {
+        
         print("gone")
     }
     
@@ -50,17 +57,26 @@ class TimedChenGameViewController: UIViewController {
     
     func startGame() {
         runTime = 10
+        gameView.updateTimeLabel(input: String(runTime))
         startTimer()
+        gameActive = true
         
     }
     
     func startTimer() {
+        
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(decrementCountLabel), userInfo: nil, repeats: true)
     }
     
     func stopGame() {
-        
+        gameActive = false
         timer.invalidate()
+        if let nav = navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            print("Couldn't present")
+        }
+        
     }
     
     func submitAttempt(time: Int, isCorrect: Bool) {
@@ -82,6 +98,7 @@ class TimedChenGameViewController: UIViewController {
         gameView.updateTimeLabel(input: String(runTime))
         if (runTime <= 0) {
             timer.invalidate()
+            stopGame()
         }
     }
     
