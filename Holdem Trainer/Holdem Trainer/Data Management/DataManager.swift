@@ -100,7 +100,7 @@ extension DataManager: GameAttemptManagable {
 }
 
 extension DataManager {
-    func returnAllTimes() -> [Int] {
+    func getAllTimes() -> [Int] {
         var timeArray = [Int]()
         let allRecords = getAllAttempts()
         for record in allRecords {

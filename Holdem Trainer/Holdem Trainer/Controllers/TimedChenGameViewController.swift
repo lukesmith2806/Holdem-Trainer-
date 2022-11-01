@@ -29,6 +29,7 @@ class TimedChenGameViewController: UIViewController {
         gameRun()
         startGame()
         stopWatch.start()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

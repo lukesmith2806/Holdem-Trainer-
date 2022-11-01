@@ -27,7 +27,6 @@
 		A357FB622831AFB500AC523E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357FB612831AFB500AC523E /* DataManager.swift */; };
 		A38445032818CBBE004324F4 /* ChenGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38445022818CBBE004324F4 /* ChenGameViewController.swift */; };
 		A38445092818CC61004324F4 /* HoldemTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38445082818CC61004324F4 /* HoldemTabBarController.swift */; };
-		A38F104E2824937900903178 /* HoldemTrainerData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A38F104C2824937900903178 /* HoldemTrainerData.xcdatamodeld */; };
 		A3B51787283AC2F50015553B /* GameScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B51786283AC2F50015553B /* GameScore.swift */; };
 		A3B51789283AC6CC0015553B /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B51788283AC6CC0015553B /* Storable.swift */; };
 		A3F4C8E228014F79000D8A6F /* DeckOfPlayingCards in Frameworks */ = {isa = PBXBuildFile; productRef = A3F4C8E128014F79000D8A6F /* DeckOfPlayingCards */; };
@@ -73,7 +72,6 @@
 		A357FB612831AFB500AC523E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A38445022818CBBE004324F4 /* ChenGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChenGameViewController.swift; sourceTree = "<group>"; };
 		A38445082818CC61004324F4 /* HoldemTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldemTabBarController.swift; sourceTree = "<group>"; };
-		A38F104D2824937900903178 /* HoldemTrainerData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HoldemTrainerData.xcdatamodel; sourceTree = "<group>"; };
 		A3B51786283AC2F50015553B /* GameScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScore.swift; sourceTree = "<group>"; };
 		A3B51788283AC6CC0015553B /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
 		A3F4C8E7280151A8000D8A6F /* ChenGuesserGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChenGuesserGame.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				A3020BB7290A1FC300869132 /* Documentation.docc */,
-				A38F104C2824937900903178 /* HoldemTrainerData.xcdatamodeld */,
 				A331B13728014EA600E6EC40 /* Holdem Trainer */,
 				A3020BAF2908729100869132 /* Holdem TrainerTests */,
 				A331B13628014EA600E6EC40 /* Products */,
@@ -402,7 +399,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A38F104E2824937900903178 /* HoldemTrainerData.xcdatamodeld in Sources */,
 				A3B51789283AC6CC0015553B /* Storable.swift in Sources */,
 				A31DAAC528404FD4003EFCFC /* StatisticsViewController.swift in Sources */,
 				A3020BC2290DA21900869132 /* GameListTableViewCell.swift in Sources */,
@@ -717,19 +713,6 @@
 			productName = DeckOfPlayingCards;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		A38F104C2824937900903178 /* HoldemTrainerData.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A38F104D2824937900903178 /* HoldemTrainerData.xcdatamodel */,
-			);
-			currentVersion = A38F104D2824937900903178 /* HoldemTrainerData.xcdatamodel */;
-			path = HoldemTrainerData.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = A331B12D28014EA600E6EC40 /* Project object */;
 }
