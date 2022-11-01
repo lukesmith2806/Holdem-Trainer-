@@ -9,7 +9,7 @@ import Foundation
 import GRDB
 
 protocol GameScoreManagable {
-    func getAll() -> [GameScore]
+    func getAllScores() -> [GameScore]
     func find(with name: String) -> GameScore? // return the first character attribute it can find or nothing at all
     func add(gameScore: GameScore)
     func update(gameScore: GameScore)
@@ -17,7 +17,7 @@ protocol GameScoreManagable {
 }
 
 protocol GameAttemptManagable {
-    func getAll() -> [GameAttempt]
+    func getAllAttempts() -> [GameAttempt]
     func find(with name: String) -> GameAttempt? // return the first character attribute it can find or nothing at all
     func add(gameAttempt: GameAttempt)
     func update(gameAttempt: GameAttempt)
@@ -46,13 +46,13 @@ class DataManager {
 extension DataManager: GameScoreManagable {
 
     // R: Reading data
-    func getAll() -> [GameScore] {
+    func getAllScores() -> [GameScore] {
         let records: [GameScore] = fetchAll()
         return records
     }
     
-    func find(with name: String) -> GameScore? {
-        let found: [GameScore] = find(key: "name", value: name)
+    func find(with scoreName: String) -> GameScore? {
+        let found: [GameScore] = find(key: "name", value: scoreName)
         return found.first
     }
     // C: Creates data
@@ -74,7 +74,7 @@ extension DataManager: GameScoreManagable {
 extension DataManager: GameAttemptManagable {
 
     // R: Reading data
-    func getAll() -> [GameAttempt] {
+    func getAllAttempts() -> [GameAttempt] {
         let records: [GameAttempt] = fetchAll()
         return records
     }
@@ -129,6 +129,17 @@ extension DataManager {
                 t.column("name", .text).notNull().collate(.localizedCaseInsensitiveCompare)
                 t.column("attempts", .integer).notNull()
                 t.column("correct", .integer).notNull()
+            }
+        }
+        
+        migrator.registerMigration("createGameAttempts") { db in
+            // Create a table
+            // See https://github.com/groue/GRDB.swift#create-tables
+            try db.create(table: "gameAttempt") { t in
+                t.autoIncrementedPrimaryKey("id")
+                t.column("name", .text).notNull().collate(.localizedCaseInsensitiveCompare)
+                t.column("time", .integer).notNull()
+                t.column("correct", .boolean).notNull()
             }
         }
         

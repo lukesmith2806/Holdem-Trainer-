@@ -12,7 +12,6 @@ import SnapKit
 class StatisticsView: UIView {
     
     let stackView = UIStackView()
-    let statisticsArray: [GameScore]
     let statsText = UITextView()
     
     // View that contains text view to display rules text for game
@@ -26,7 +25,7 @@ class StatisticsView: UIView {
     override init(frame: CGRect) {
         Logger.viewCycle.info("Statistics View initialized")
         //loads statistics from database
-        statisticsArray = DataManager.shared.getAll()
+       
         super.init(frame: frame)
         createSubviews()
         self.backgroundColor = globalBackgroundColor
@@ -36,7 +35,7 @@ class StatisticsView: UIView {
     required init?(coder aDecoder: NSCoder) {
         Logger.viewCycle.info("Statistics View initialized")
         //Initializes array with data from DB
-        statisticsArray = DataManager.shared.getAll()
+    
         super.init(coder: aDecoder)
         createSubviews()
     }

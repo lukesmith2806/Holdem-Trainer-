@@ -20,11 +20,7 @@ class Stopwatch {
 }
 
 extension Stopwatch {
-    func elapsedTimeFloat() -> Float {
-        var ms = -(self.startTime?.timeIntervalSinceNow ?? 0).millisecond
-        return ms.msToSeconds
-    }
-    
+ 
     func elapsedTimeMilliseconds() -> Int {
         return Int(elapsedTime() * 1000)
     }

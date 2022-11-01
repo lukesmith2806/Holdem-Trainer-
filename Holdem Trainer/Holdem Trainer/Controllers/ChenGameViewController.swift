@@ -8,7 +8,6 @@ import UIKit
 import Logging
 class ChenGameViewController: UIViewController {
     var highScore = 0
-    var gameScoreStored = DataManager.shared.find(with: "ChenGame")
     let chenGame = ChenGuesserGame()
     var gameDict: [ChenGameButton:ChenHand] = [:]
     let gameView = ChenGameView()
@@ -46,23 +45,17 @@ class ChenGameViewController: UIViewController {
             return
         }
         // updating highScore
-        gameScoreStored?.attempts += 1
+    
         if (chenGame.checkValue(handArray: Array(gameDict.values), chosenHand: hand) == true) {
             highScore += 1
-            gameScoreStored?.correct += 1
+      
             gameRun()
         } else {
             highScore = 0
             gameRun()
         }
             // updates DB
-        if let gameScoreStored = gameScoreStored {
-            DataManager.shared.update(gameScore: gameScoreStored)
-            print("Could Update Gama Data")
-        } else {
-            print("Could not update Game Data")
-        }
-       
+      
             
         
         sender.hapticExtraHeavy()
