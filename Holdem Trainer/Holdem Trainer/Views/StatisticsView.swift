@@ -14,6 +14,7 @@ class StatisticsView: UIView {
     let stackView = UIStackView()
     let statisticsArray: [GameScore]
     let statsText = UITextView()
+    
     // View that contains text view to display rules text for game
     // Will be updated in the future to contain statistics
     

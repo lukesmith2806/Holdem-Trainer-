@@ -13,7 +13,7 @@ struct GameAttempt: Storable {
     
     var name: String
     var correct: Bool
-    var time: Float
+    var time: Int
 }
 
 // GameAttempt must confrom to Codable, FetchableRecord, MutablePersistableRecord protocols for functionality with GRDB

@@ -11,6 +11,8 @@ class TimedChenGameViewController: UIViewController {
     let gameTime = 10
     let chenGame = ChenGuesserGame()
     let gameView  = TimedChenGameView()
+    let stopWatch = Stopwatch()
+    
     var runTime = 10
     var gameDict: [ChenGameButton:ChenHand] = [:]
     var highScore = 0
@@ -25,6 +27,7 @@ class TimedChenGameViewController: UIViewController {
         }
         gameRun()
         startTimer()
+        stopWatch.start()
     }
     override func viewWillDisappear(_ animated: Bool) {
         print("gone")
@@ -43,6 +46,8 @@ class TimedChenGameViewController: UIViewController {
             tempStringArray.append(val.description)
         }
         gameView.updateSubviews(tempStringArray, score: highScore)
+        stopWatch.start()
+        
     }
     
     func startGame() {
@@ -57,9 +62,10 @@ class TimedChenGameViewController: UIViewController {
     
     func stopGame() {
         
+        timer.invalidate()
     }
     
-    func submitScore() {
+    func submitScore(time: Float, isCorrect: Bool) {
         
     }
     
@@ -84,13 +90,21 @@ class TimedChenGameViewController: UIViewController {
             print("Button text is nil")
             return
         }
+        
+        
         if (chenGame.checkValue(handArray: Array(gameDict.values), chosenHand: hand) == true) {
             highScore += 1
+            print(stopWatch.elapsedTimeMilliseconds())
             gameRun()
+            
+            
         } else {
             highScore = 0
+            print(stopWatch.elapsedTimeMilliseconds())
+            
             gameRun()
         }
+       
         
         sender.hapticExtraHeavy()
         sender.shake()

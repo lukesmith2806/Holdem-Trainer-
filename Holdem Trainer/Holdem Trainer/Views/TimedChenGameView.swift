@@ -11,10 +11,10 @@ import SnapKit
 
 class TimedChenGameView: UIView {
     let stackView = UIStackView()
+    
+    
     var scorelabel = UILabel()
     var timeLabel = UILabel()
-
-   
     var handArray = [String]()
     var buttonOne = ChenGameButton()
     var buttonTwo = ChenGameButton()
