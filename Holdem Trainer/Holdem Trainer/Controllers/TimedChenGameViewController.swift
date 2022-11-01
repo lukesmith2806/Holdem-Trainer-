@@ -65,8 +65,9 @@ class TimedChenGameViewController: UIViewController {
         timer.invalidate()
     }
     
-    func submitScore(time: Float, isCorrect: Bool) {
-        
+    func submitAttempt(time: Int, isCorrect: Bool) {
+        let attempt = GameAttempt(name: "Timed Chen Game", correct: isCorrect, time: time)
+        DataManager.shared.add(GameAttempt: attempt)
     }
     
     func newAttempt() {
@@ -94,13 +95,13 @@ class TimedChenGameViewController: UIViewController {
         
         if (chenGame.checkValue(handArray: Array(gameDict.values), chosenHand: hand) == true) {
             highScore += 1
-            print(stopWatch.elapsedTimeMilliseconds())
+            
             gameRun()
             
             
         } else {
             highScore = 0
-            print(stopWatch.elapsedTimeMilliseconds())
+            
             
             gameRun()
         }

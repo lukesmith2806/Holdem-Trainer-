@@ -71,6 +71,35 @@ extension DataManager: GameScoreManagable {
     }
 }
 
+extension DataManager: GameAttemptManagable {
+
+    // R: Reading data
+    func getAll() -> [GameAttempt] {
+        let records: [GameAttempt] = fetchAll()
+        return records
+    }
+    
+    func find(with name: String) -> GameAttempt? {
+        let found: [GameAttempt] = find(key: "name", value: name)
+        return found.first
+    }
+    // C: Creates data
+    func add(gameAttempt: GameAttempt) {
+        var insertable = gameAttempt
+        insert(row: &insertable)
+    }
+    // U: Updating data
+    func update(gameAttempt: GameAttempt) {
+        update(row: gameAttempt)
+    }
+    // D: Deletes data
+        func delete(gameAttempt: GameAttempt) -> Bool {
+        var deletable = gameAttempt
+        return delete(row: &deletable)
+    }
+}
+
+
 // GRDB implementation
 extension DataManager {
     
