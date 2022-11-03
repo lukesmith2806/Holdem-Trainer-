@@ -19,8 +19,8 @@ class GameListViewController: UIViewController {
         title = "Games"
         configureTableView()
         games = fetchData()
-        navigationController?.navigationBar.isOpaque = true
-        navigationController?.isNavigationBarHidden = false
+       
+        
     }
     
     func configureTableView() {
@@ -64,7 +64,7 @@ extension GameListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let gameVC = gameDict[games[indexPath.row]] {
             navigationController?.pushViewController(gameVC, animated: true)
-           
+            
         }
     }
     
@@ -72,4 +72,6 @@ extension GameListViewController: UITableViewDelegate, UITableViewDataSource {
     
    
 }
+
+
 

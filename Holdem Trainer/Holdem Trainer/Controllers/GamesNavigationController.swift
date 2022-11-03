@@ -15,8 +15,12 @@ class GamesNavigationController: UINavigationController {
         title = "Games"
         gameList.navigationItem.title = "Games"
         tabBarItem.image = UIImage(systemName: "gamecontroller")
-        pushViewController(gameList, animated: false)
+        pushViewController(gameList, animated: true)
+        self.navigationBar.isOpaque = true
+        self.navigationBar.barTintColor = .cyan
         
+        self.navigationBar.tintColor = .brown
+        self.view.backgroundColor = .red
     }
     
 

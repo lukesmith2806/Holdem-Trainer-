@@ -26,11 +26,16 @@ class TimedChenGameViewController: UIViewController {
         for btn in gameView.buttonArray {
             btn.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         }
+        let helpBarButton = UIBarButtonItem(image: UIImage(systemName: "info.circle")!, style: .plain, target: self , action: #selector(presentInfoScreen))
+        self.navigationItem.rightBarButtonItem = helpBarButton
         gameRun()
         startGame()
         stopWatch.start()
         edgesForExtendedLayout = []
-       
+        if let nav = navigationController {
+            nav.navigationBar.isOpaque = true
+            nav.navigationBar.tintColor = .yellow
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,7 +108,15 @@ class TimedChenGameViewController: UIViewController {
             stopGame()
         }
     }
-    
+    @objc func presentInfoScreen() {
+        print("func called ")
+        let infoViewController = ChenGameInformationViewController()
+        if let nav = navigationController {
+            nav.pushViewController(infoViewController, animated: true)
+        } else {
+            print("fail")
+        }
+    }
     @objc func buttonTapped(sender: ChenGameButton) {
         guard let buttonText = sender.titleLabel?.text, let hand = gameDict[sender] else {
             print("Button text is nil")
