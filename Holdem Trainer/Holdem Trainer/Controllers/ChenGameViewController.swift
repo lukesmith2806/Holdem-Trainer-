@@ -18,6 +18,7 @@ class ChenGameViewController: UIViewController {
         for btn in gameView.buttonArray {
             btn.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         }
+        edgesForExtendedLayout = []
             
         
         gameRun()

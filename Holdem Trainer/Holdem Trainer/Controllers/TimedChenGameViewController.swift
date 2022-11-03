@@ -29,7 +29,8 @@ class TimedChenGameViewController: UIViewController {
         gameRun()
         startGame()
         stopWatch.start()
-        
+        edgesForExtendedLayout = []
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
