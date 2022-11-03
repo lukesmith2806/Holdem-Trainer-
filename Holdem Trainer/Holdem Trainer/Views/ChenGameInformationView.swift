@@ -9,12 +9,12 @@ import UIKit
 import Logging
 
 class ChenGameInformationView: UIView {
-
+    let info = ChenGameInfoText()
     override init(frame: CGRect) {
         Logger.viewCycle.info("ChenGameInfo view initialized")
         super.init(frame: frame)
 
-        self.backgroundColor = .red
+        self.backgroundColor = globalBackgroundColor
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -22,5 +22,10 @@ class ChenGameInformationView: UIView {
         super.init(coder: aDecoder)
    
     }
+    
+    func createSubviews() {
+        
+    }
+    
 
 }
