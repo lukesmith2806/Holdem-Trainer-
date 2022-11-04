@@ -15,7 +15,7 @@ class HoldemTabBarController: UITabBarController {
         //let nav = genNavCon(vc: GameListViewController(), title: "Games", image: UIImage(systemName: "gamecontroller")! )
         let nav = GamesNavigationController()
         let nav2 = genNavCon(vc: StatisticsViewController(), title: "Rules", image: UIImage(systemName: "questionmark.square.dashed")!)
-        self.tabBar.backgroundColor =  .white
+       
         
         viewControllers  = [nav,nav2]
 

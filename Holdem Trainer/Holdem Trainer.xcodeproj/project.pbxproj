@@ -28,7 +28,6 @@
 		A38445032818CBBE004324F4 /* ChenGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38445022818CBBE004324F4 /* ChenGameViewController.swift */; };
 		A38445092818CC61004324F4 /* HoldemTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38445082818CC61004324F4 /* HoldemTabBarController.swift */; };
 		A3A093C729130FB400F64BE6 /* GamesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A093C629130FB400F64BE6 /* GamesNavigationController.swift */; };
-		A3A093C92914363B00F64BE6 /* ChenGameInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A093C82914363B00F64BE6 /* ChenGameInformationView.swift */; };
 		A3A093CB2914369A00F64BE6 /* ChenGameInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A093CA2914369A00F64BE6 /* ChenGameInformationViewController.swift */; };
 		A3A093CF2914560A00F64BE6 /* ChenGameInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A093CE2914560A00F64BE6 /* ChenGameInfoText.swift */; };
 		A3B51787283AC2F50015553B /* GameScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B51786283AC2F50015553B /* GameScore.swift */; };
@@ -77,7 +76,6 @@
 		A38445022818CBBE004324F4 /* ChenGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChenGameViewController.swift; sourceTree = "<group>"; };
 		A38445082818CC61004324F4 /* HoldemTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldemTabBarController.swift; sourceTree = "<group>"; };
 		A3A093C629130FB400F64BE6 /* GamesNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesNavigationController.swift; sourceTree = "<group>"; };
-		A3A093C82914363B00F64BE6 /* ChenGameInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChenGameInformationView.swift; sourceTree = "<group>"; };
 		A3A093CA2914369A00F64BE6 /* ChenGameInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChenGameInformationViewController.swift; sourceTree = "<group>"; };
 		A3A093CE2914560A00F64BE6 /* ChenGameInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChenGameInfoText.swift; sourceTree = "<group>"; };
 		A3B51786283AC2F50015553B /* GameScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScore.swift; sourceTree = "<group>"; };
@@ -228,7 +226,6 @@
 				A31DAAC628404FDF003EFCFC /* StatisticsView.swift */,
 				A3F4C8ED280151B4000D8A6F /* ChenGameView.swift */,
 				A3020BCB2910605300869132 /* TimedChenGameView.swift */,
-				A3A093C82914363B00F64BE6 /* ChenGameInformationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -417,7 +414,6 @@
 				A3020BB8290A1FC300869132 /* Documentation.docc in Sources */,
 				A357FB622831AFB500AC523E /* DataManager.swift in Sources */,
 				A3A093CB2914369A00F64BE6 /* ChenGameInformationViewController.swift in Sources */,
-				A3A093C92914363B00F64BE6 /* ChenGameInformationView.swift in Sources */,
 				A38445092818CC61004324F4 /* HoldemTabBarController.swift in Sources */,
 				A3020BD6291093BD00869132 /* Stopwatch.swift in Sources */,
 				A3F4C8EA280151A8000D8A6F /* ChenHand.swift in Sources */,

@@ -33,8 +33,8 @@ class TimedChenGameViewController: UIViewController {
         stopWatch.start()
         edgesForExtendedLayout = []
         if let nav = navigationController {
-            nav.navigationBar.isOpaque = true
-            nav.navigationBar.tintColor = .yellow
+            nav.navigationBar.isTranslucent = false
+            
         }
     }
     
@@ -79,11 +79,12 @@ class TimedChenGameViewController: UIViewController {
         gameActive = false
         timer.invalidate()
         if let nav = navigationController {
+            if nav.topViewController == self {
             nav.popViewController(animated: true)
-        } else {
-            print("Couldn't present")
-        }
-        
+            } else {
+                print("not the topViewController")
+            }
+            }
     }
     
     func submitAttempt(time: Int, isCorrect: Bool) {
