@@ -32,14 +32,20 @@ class DataManager {
     private init() {
         openDatabase()
         
-        do {
-            try migrator.migrate(db)
-            print("DB Successfully migrated")
-        } catch {
-            print("Error migrating database. ", error)
-        }
+       do {
+                   try migrator.migrate(db)
+                   print("DB Successfully migrated")
+               } catch {
+                   print("Error migrating database. ", error)
+               }
+            }
+        
+     
+        
     }
-}
+    
+   
+
 
 // implementation of GameScoreManagable Protocol
 // allows for CRUD functionality with Game Score data
